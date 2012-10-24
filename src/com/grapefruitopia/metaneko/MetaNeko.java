@@ -15,7 +15,7 @@ import android.graphics.Typeface;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.util.Log;
-import android.widget.Toast;
+//import android.widget.Toast;
 
 public class MetaNeko extends Service {
 	public static String TAG = "MetaNeko";
@@ -67,7 +67,8 @@ public class MetaNeko extends Service {
 	
 	@Override
 	public void onCreate() {
-		Toast.makeText(this, "Neko Service Created", Toast.LENGTH_LONG).show();
+		//Enable this toast if debugging services
+		//Toast.makeText(this, "Neko Service Created", Toast.LENGTH_LONG).show();
 		Log.d(TAG, "onCreate");
 		
     	loadKitten(this);
@@ -83,17 +84,15 @@ public class MetaNeko extends Service {
 
 	@Override
 	public void onDestroy() {
-		Toast.makeText(this, "Neko Service Stopped", Toast.LENGTH_LONG).show();
+		//Toast.makeText(this, "Neko Service Stopped", Toast.LENGTH_LONG).show();
 		Log.d(TAG, "onDestroy");
 		stopUpdate();
-		//stop();
 	}
 	
 	@Override
 	public void onStart(Intent intent, int startid) {
-		Toast.makeText(this, "Neko Service Started", Toast.LENGTH_LONG).show();
+		//Toast.makeText(this, "Neko Service Started", Toast.LENGTH_LONG).show();
 		Log.d(TAG, "onStart");
-		//start(this);
 		startUpdate(this);
 	}
     
